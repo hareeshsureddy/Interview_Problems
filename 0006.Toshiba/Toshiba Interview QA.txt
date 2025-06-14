@@ -1,0 +1,91 @@
+1. Output for give code 
+int main() {
+    int i =1;
+    switch(i)
+    {
+        case 0:
+             printf("value = 0\n");
+        break;
+        case 1:
+              while(i == 1)
+              {
+                  printf("value = 1\n");
+                  break;
+              }
+              printf("value = 2\n");
+        default:
+                break;
+    }
+}
+2. Output for give inputs 
+1. 	v.a=10;
+    v.b=257;
+2.  v.a=10;
+    v.b=20;
+int main()
+{
+    union var
+    {
+        int a;
+		char b;
+    };
+    union var v;
+		v.a=10;
+		v.b=20;
+    printf("%d\n", v.a);
+    return 0;
+}
+
+	3. Output for give code 
+		enum days {MON=-1, TUE, WED=6, THU, FRI, SAT};
+		printf("%d, %d, %d, %d, %d, %d\n", MON, TUE, WED, THU, FRI, SAT);
+		        -1   0   6  7    8    9   
+	4. 	Explain below terms			
+1.const int a;
+2.int const a;
+3.const int *a;
+4.int * const a;
+5.int const * const a;
+
+1. int *ptr();
+2. int (*ptr)();
+
+	5. Output for give code 
+int main() {
+   unsigned int test[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+   unsigned char *ptr;
+  test 0x01 00 00 00 02 00 00 00 03 00 00 00 04 00
+   ptr = (unsigned char *)test;
+   for (int i = 0; i < 10 ; i++)
+   {
+          printf("%d\n\r", *ptr++);
+   }
+}
+	6. Output for give code (In which case it prints the actual value)
+	int* func1()
+	{
+		int b = 10;    
+		return (&b);
+	}
+ 
+	void main()
+	{
+		int *a;
+		a = func1();
+		printf(" %d" , *a);
+	}
+	
+	7. How to measure the size of any variable without “sizeof” operator?
+
+int 	a=0x11223344;    
+uint8_t b=0x55; 		  
+int *ptr1=&a;
+int *ptr=&a;
+	ptr++;
+	printf("%d",ptr-ptr1)
+	
+	
+	8. Using only a Four-minute hourglass and a seven-minute hourglass/sandglass,
+How will you measure exactly nine minutes?
+ 
+Restriction:- Without the process taking longer than nine minutes.

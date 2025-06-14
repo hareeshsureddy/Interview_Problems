@@ -6,6 +6,7 @@ typedef struct{
     int a:1
     int b:1
 }reg;
+
 /* reverse a number*/
 int revers(int num){
     int result=0;
