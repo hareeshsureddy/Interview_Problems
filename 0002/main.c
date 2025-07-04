@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+/*1.Find the second larget number in a array*/
+
+/*2.Reverse a given single linked list*/
 struct node{
     int data;
     struct node *link;

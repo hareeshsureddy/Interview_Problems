@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1751204188 source:d:\github\interview_problems\0010.infineon\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

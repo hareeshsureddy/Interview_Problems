@@ -121,7 +121,22 @@ int i=0;
        result=(lowWord<<8)|((lowWord)>>8)&0xFF;
        result=(result|(highWord<<16));
     printf("%x",result);
-        return 0;*/
+
+    // actual answer done by my self after interview
+    int num=0xABABABAB;
+    int result=0,i=0;
+    while(i<31){
+        int byte=num&0xFF;
+        byte=(((byte>>4)&0xF)|((byte&0xF)<<4));
+        result|=(byte<<i);
+        i=i+8;
+        num=(num>>8);
+        printf("%X  ",num);
+      //  FFABABAB  FFFFABAB  FFFFFFAB  FFFFFFFF
+    }
+    printf("\n%X",result);
+    //BABABABA
+        return 0;
 /*3. Array has N/2 elements filled . Duplicate each element in array without using additional storage.
 Size of array = N
 Input = 1,2,3,4

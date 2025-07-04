@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1751350798 source:d:\github\interview_problems\0011.adi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<stdint.h>
+

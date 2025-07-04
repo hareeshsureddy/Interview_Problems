@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1751305296 source:d:\github\interview_problems\0008.vayavyalabs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+
