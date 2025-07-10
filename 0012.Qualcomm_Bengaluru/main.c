@@ -3,13 +3,21 @@
 
 #define IF_EVEN(x) if ((x)%2==0) printf("even\n");\
                    else printf("odd\n");
+
+    void func(const int *p) {
+        int *q = (int *)p;
+        *q = 42;
+    }
+
 int main()
 {
+    const int a=20;
+    func(&a);
     IF_EVEN(2)
     printf("Hello world!\n");
     return 0;
 }
-
+/*
 //Problem-1 what is the output and why expain
 void fun(int *p)
 {
@@ -74,6 +82,9 @@ int b = SQUARE(a+1)
 //Problem-8 allocate a memory for integer pointers.
     int (*arr)[10]; //This is worng
     int *arr[10];
+//Problem-8.1 what arr the difference between below two statements.
+    char *s="hellow, World!"
+    char s[]="hellow, World!"
 //Problem-9 allocate a memory for integer pointers dynamically.
     int **ptr=(int**)malloc(10*sizeof(int*));
 //Problem-10 write a program to add a element to an array and delete an a element to an array.
@@ -130,5 +141,5 @@ void callCount(){
         count++;
         printf("callCount count %d",count);
 }
-
+*/
 
