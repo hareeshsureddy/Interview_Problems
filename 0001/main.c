@@ -10,9 +10,19 @@
  }
 int main()
 {
+    {//Shift odd and Even bits in a given number
+        #define swapbits(data)      data=(((data&0xAAAAAAAA)>>1)|((data&0x55555555)<<1))
+        int num=0xAA;
+        printf("0x%X\n",swapbits(num));
+    }
+    {//wam to swap a byte
+        #define swapByte(data)      data=((data&0xFF)<<8)|((data>>8)&0xFF)
+        int num=0xAA55;
+        printf("0x%X\n",swapByte(num));
+    }
     {//Function pointers and array of function pointers syntex
         char* (*reverse)(char *s);
-        char* (*reverse[10])(char *s);
+        char* (*reverse1[10])(char *s);
     }
     {//Wap for endian swap
         int num=0x82345678;
