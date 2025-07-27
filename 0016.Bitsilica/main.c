@@ -3,11 +3,11 @@
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
-/*
-Problem-1 reverse a given string based on the words
-Input:- "Hareesh Sureddy is a Firmware Engineer";
-Output:- "Engineer Firmware a is Sureddy Hareesh";
-*/
+
+/* //TR-1
+//Problem-1 reverse a given string based on the words
+//Input:- "Hareesh Sureddy is a Firmware Engineer";
+//Output:- "Engineer Firmware a is Sureddy Hareesh";
 char *ReverseWord(char *s){
 	int end=strlen(s);
 	int start=end-1;
@@ -28,11 +28,11 @@ char *ReverseWord(char *s){
 	return res;
 }
 
-/*
-Problem-2 Reverse a bits in a given uint8_t bit value.
-i/p: 10101100=172
-o/p: 00110101=53
-*/
+
+//Problem-2 Reverse a bits in a given uint8_t bit value.
+//i/p: 10101100=172
+//o/p: 00110101=53
+
 uint8_t reverseBits( uint8_t num){
 	int index=0;
 	while(index<4){
@@ -52,10 +52,10 @@ uint8_t reverseBits( uint8_t num){
 	}
 	return num;
 }
-/*
-Problem-3 (Print the nth node from the last)
-1->2->3->4->5->41->5->67->485->10 x
-*/
+
+//Problem-3 (Print the nth node from the last)
+//1->2->3->4->5->41->5->67->485->10 x
+
 struct LinkList{
 	int data;
 	struct LinkList *next;
@@ -80,5 +80,39 @@ int main()
    printf("%s\n",ReverseWord(string));
    uint8_t num=1;
    printf("%u",reverseBits(num));
+    return 0;
+}*/
+   //TR-2
+int main()
+{
+    #define SIZE 5
+ 0 1 2 3 4
+int buffer[SIZE];
+int fill_index=0;  5  0100
+int read_index=0;  1
+
+void write(int data){
+	if( read_index>=SIZE)
+	{
+	read_index-=SIZE;
+	fill_index-=SIZE;
+	}
+	if(fill_index-read_index>=SIZE){
+		printf("Buffer is full");
+		return;
+	}
+	buffer[fill_index&(SIZE-1)]=data;
+	fill_index++;
+}
+
+int read(){
+	if(fill_index>read_index){
+	return buffer[read_index++];
+	}else{
+		printf("Buffer is empty");
+		return -1;
+	}
+}
+    printf("Hello, World!");
     return 0;
 }

@@ -88,7 +88,7 @@ void read( ){
         int data= array[read];
     read++;
     } else{
-        printf("Buffer is empty;
+        printf("Buffer is empty);
     }
 }
 
