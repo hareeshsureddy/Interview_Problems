@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1755258717 source:d:\github\interview_problems\0020.infineon_blur\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

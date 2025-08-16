@@ -21,13 +21,13 @@ int main()
 //Problem-1 what is the output and why expain
 void fun(int *p)
 {
- int q = 10; 0x200
+ int q = 10;
  p = &q;
 }
 int main()
 {
  int r = 20;
- int *p = &r; 0x100
+ int *p = &r;
  fun(p);
  printf("%d", *p);
  return 0;
