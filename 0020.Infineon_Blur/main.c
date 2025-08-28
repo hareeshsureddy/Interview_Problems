@@ -1,7 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
+/* TR-1
+int *ptr=NULL;
+int var=10;
+ptr=&var;
+*ptr
 
+int **ptr2;
+  ptr2=ptr;
 
 void function(int *ptr){
     ptr=(int*)malloc(sizeof(int));
@@ -64,10 +72,10 @@ int main()
     printf("before %d Afetr %d\n",num,swapBitsofanum(num,i,j));
     swapRangeofBitsofNums(0x56,0x99,3,7);
     swapRangeofBitsofNumsMask(0x56,0x99,3,7);
-    /*
+    //
     int *ptr=0x1010; 0x2020
-    function(ptr); */
-    /*
+    function(ptr);
+    //
     int num=0x00000001;
     bool bit=num&1;
     bool bit1=(num>>31)&1;
@@ -80,15 +88,44 @@ int main()
     else
         num&=~(1);
     printf("0x%X",num);
-    */
     return 0;
 }
-/*
-int *ptr=NULL;
-int var=10;
-ptr=&var;
-*ptr
+ */
+// TR-3
 
-int **ptr2;
-  ptr2=ptr;
-*/
+typedef struct {
+    int a;
+    int b;
+}mydata;
+
+mydata var1;
+void modifymydata(mydata *ptr){
+    uint32_t *ptr1=(uint32_t*)ptr;
+        ptr->a=30;
+        ptr->b=40;
+        ptr->a=(ptr->a<<1); //a*2
+        ptr->b=(ptr->b>>1); //b/2
+        ptr1[0]=30;
+        ptr1[1]=40;
+}
+
+int main()
+{
+    mydata var;
+    var.a=10;
+    var.b=20;
+    printf("%d %d\n",var.a,var.b);
+    modifymydata(&var);
+    printf("%d %d\n",var.a,var.b);
+
+    #define MASK 2
+    int a=8; //1000
+    a^=(1<<MASK);
+    if(a&(1<<MASK)){
+        printf("Its set\n");
+    }else
+    {
+        printf("Its clear\n");
+    }
+    return 0;
+}
