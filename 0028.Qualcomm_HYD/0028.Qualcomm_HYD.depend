@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1740933562 source:d:\github\interview_problems\0028.qualcomm_hyd\main.c
+	<stdio.h>
+	<stdlib.h>
+

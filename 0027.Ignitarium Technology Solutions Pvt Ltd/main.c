@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int main()
-{
-    printf("Hello world!\n");
-    return 0;
-}
+#include <string.h>
+/* TR-1
 
 Write a program with 2 variables, One should be local and the other a global variable
 Initialise some values into them and then print both in the main function.
@@ -45,3 +41,26 @@ if(i > j) {
 	print ("Yay");
 }
 print ("boo");
+*/
+// TR-2
+typedef struct {
+    char Name[20];
+    int RollNo;
+    void (*fun)(void*);
+}myStruct;
+
+void myPrintf(void *ptr){
+       myStruct *dataptr=(myStruct*)ptr;
+       printf("Name %s\n",dataptr->Name);
+       printf("RollNo %d\n",dataptr->RollNo);
+}
+int main()
+{
+    myStruct *ptr=(myStruct*)malloc(sizeof(myStruct));
+    strcpy(ptr->Name,"hareesh");
+    ptr->RollNo=49;
+    ptr->fun=myPrintf;
+    ptr->fun(ptr);
+    free(ptr);
+    return 0;
+}

@@ -29,7 +29,7 @@ int swapBitsofanum(int num,int i, int j){
 }
 void swapRangeofBitsofNums(int num1,int num2, int r,int l){
         int temp=num1;
-        printf("After swap 0x%X 0x%X ",num1,num2);
+        printf("Before swap 0x%X 0x%X ",num1,num2);
         for(int i=r-1;i<l;i++){
             if((num2>>i)&1)
                 num1|=(1<<i);
